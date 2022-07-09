@@ -60,7 +60,8 @@ particlesJS.load('particles-js', 'assets/particles.json', function() {
         "src": "img/github.svg",
         "width": 100,
         "height": 100
-      }
+      },
+      "buffer": 0,
     },
     "opacity": {
       "value": 0.5,
@@ -164,6 +165,7 @@ key | option type / notes | example
 `particles.shape.image.src` | path link <br /> svg / png / gif / jpg | `"assets/img/yop.svg"` <br /> `"http://mywebsite.com/assets/img/yop.png"`
 `particles.shape.image.width` | number <br />(for aspect ratio) | `100`
 `particles.shape.image.height` | number <br />(for aspect ratio) | `100`
+`particles.shape.buffer` | number | `0`
 `particles.opacity.value` | number (0 to 1) | `0.75`
 `particles.opacity.random` | boolean | `true` / `false` 
 `particles.opacity.anim.enable` | boolean | `true` / `false` 

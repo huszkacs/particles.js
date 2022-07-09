@@ -30,6 +30,7 @@ var pJS = function(tag_id, params){
         value: '#fff'
       },
       shape: {
+        buffer: 0,
         type: 'circle',
         stroke: {
           width: 0,
@@ -679,6 +680,9 @@ var pJS = function(tag_id, params){
         dy = p1.y - p2.y,
         dist = Math.sqrt(dx*dx + dy*dy);
 
+    var rx = pJS.particles.shape.buffer * dx / dist;
+    var ry = pJS.particles.shape.buffer * dy / dist;
+
     /* draw a line between p1 and p2 if the distance between them is under the config distance */
     if(dist <= pJS.particles.line_linked.distance){
 
@@ -694,8 +698,8 @@ var pJS = function(tag_id, params){
         
         /* path */
         pJS.canvas.ctx.beginPath();
-        pJS.canvas.ctx.moveTo(p1.x, p1.y);
-        pJS.canvas.ctx.lineTo(p2.x, p2.y);
+        pJS.canvas.ctx.moveTo(p1.x - rx, p1.y - ry);
+        pJS.canvas.ctx.lineTo(p2.x + rx, p2.y + ry);
         pJS.canvas.ctx.stroke();
         pJS.canvas.ctx.closePath();
 
